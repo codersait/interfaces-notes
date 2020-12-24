@@ -1,19 +1,19 @@
 1. Why do we use interfaces?
    - We use interfaces to build **loosely-coupled**, **extensible** and **testable**
 applications.    
-2. What is tightly-coupled code?
+1. What is tightly-coupled code?
    - Tightly-coupled code is code that is hard to change because there is a
 strong dependency between the entities (eg classes) in the code.
 Changing one class may result in several cascading, breaking changes in
 the code.
 3. Is this code loosely or tightly coupled and why?
-- `public interface TaxCalculator{}
-public class TaxCalculator2018 implements TaxCalculator{}
-public class TaxReport {
-private TaxCalculator calculator;
-public TaxReport() {
-calculator = new TaxCalculator2018();
- }
+- `public interface TaxCalculator{}` <br/>
+public class TaxCalculator2018 implements TaxCalculator{}<br/>
+public class TaxReport {<br/>
+private TaxCalculator calculator;<br/>
+public TaxReport() {<br/>
+calculator = new TaxCalculator2018();<br/>
+  }<br/>
 }`
     - Even though the type of the calculator field in TaxReport is an
 interface, we’re initializing this field to an instance of
