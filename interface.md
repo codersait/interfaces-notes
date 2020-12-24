@@ -8,13 +8,13 @@ Changing one class may result in several cascading, breaking changes in
 the code.
 3. Is this code loosely or tightly coupled and why?
 - `public interface TaxCalculator{}` <br/>
-public class TaxCalculator2018 implements TaxCalculator{}<br/>
-public class TaxReport {<br/>
-private TaxCalculator calculator;<br/>
-public TaxReport() {<br/>
-calculator = new TaxCalculator2018();<br/>
-  }<br/>
-}`
+  `public class TaxCalculator2018 implements TaxCalculator{}`<br/>
+  `public class TaxReport` {<br/>
+  `private TaxCalculator calculator;`<br/>
+  `public TaxReport() {`<br/>
+  `calculator = new TaxCalculator2018();`<br/>
+  `}`<br/>
+`}`
     - Even though the type of the calculator field in TaxReport is an
 interface, we’re initializing this field to an instance of
 TaxCalculator2018 in the constructor. So, TaxReport is tightly
